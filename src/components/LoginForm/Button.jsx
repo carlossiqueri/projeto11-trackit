@@ -1,7 +1,7 @@
 import { FormButton } from "./styled"
-function Button(){
+function Button({text}){
     return (
-        <FormButton>Entrar</FormButton>
+        <FormButton>{text}</FormButton>
     )
 }
 

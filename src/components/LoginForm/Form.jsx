@@ -12,7 +12,7 @@ export default function Form() {
       <FormularyField>
         <input id="email" placeholder="email" required />
         <input id="password" placeholder="senha" required />
-        <Button />
+        <Button text={"entrar"}/>
       </FormularyField>
 
       <RedirectLink onClick={singUpRedirect}>

@@ -1,6 +1,5 @@
-import { FormularyField } from "./styled"
-import Button from "./Button"
-import { RedirectLink } from "./styled"
+import { FormularyField, RedirectLink } from "../LoginForm/styled"
+import Button from "../LoginForm/Button"
 import { useNavigate } from "react-router-dom"
 export default function Form(){
     const navigate = useNavigate();
@@ -30,7 +29,7 @@ function loginRedirect(){
             placeholder="foto"
             required
             />
-            <Button />
+            <Button text={"cadastrar"}/>
         </FormularyField>
 
         <RedirectLink onClick={loginRedirect}>Já tem uma conta? Faça login!</RedirectLink>
