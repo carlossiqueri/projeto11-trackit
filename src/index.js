@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Reset from "./components/styles/Reset"
+import Reset from './styles/Reset';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

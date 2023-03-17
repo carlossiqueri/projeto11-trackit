@@ -1,4 +1,4 @@
-import { FormButton } from "./styled"
+import { FormButton } from "./style"
 function Button({text}){
     return (
         <FormButton>{text}</FormButton>

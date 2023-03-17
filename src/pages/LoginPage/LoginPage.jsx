@@ -1,12 +1,12 @@
 import logo from "../../images/logo.png";
 import Form from "../../components/LoginForm/Form";
-import { LoginContainer } from "./styled";
+import { LoginContainer } from "./style";
 
 export default function LoginPage() {
   const login = ["email", "password"];
   const buttonText = "Entrar";
   const linkText = "Não tem uma conta? Cadastre-se!";
-  const path = "/signUpPage";
+  const path = "/cadastro";
   return (
     <LoginContainer>
       <img src={logo} alt="logo" />

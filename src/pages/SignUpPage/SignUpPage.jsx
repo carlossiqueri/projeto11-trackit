@@ -1,5 +1,5 @@
 import logo from "../../images/logo.png";
-import { SignUpContainer } from "./styled";
+import { SignUpContainer } from "./style";
 import Form from "../../components/LoginForm/Form";
 
 export default function SignUpPage() {

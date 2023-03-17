@@ -1,7 +1,8 @@
-import { FormularyField } from "./styled";
+import { FormularyField } from "./style";
 import Button from "./Button";
-import { RedirectLink } from "./styled";
+import { RedirectLink } from "./style";
 import { useNavigate } from "react-router-dom";
+
 export default function Form({inputs, buttonText, linkText,path}) {
   const navigate = useNavigate();
   function changePanels() {
