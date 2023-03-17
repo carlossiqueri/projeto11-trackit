@@ -2,7 +2,7 @@ import { FormularyField } from "./styled";
 import Button from "./Button";
 import { RedirectLink } from "./styled";
 import { useNavigate } from "react-router-dom";
-export default function Form() {
+export default function Form({inputs}) {
   const navigate = useNavigate();
   function singUpRedirect() {
     navigate("/signUpPage")
@@ -10,8 +10,9 @@ export default function Form() {
   return (
     <>
       <FormularyField>
-        <input id="email" placeholder="email" required />
-        <input id="password" placeholder="senha" required />
+        {inputs.map((i, index) => (
+          <input key={index} id={i} placeholder={i} required />
+        ))}
         <Button text={"entrar"}/>
       </FormularyField>
 
