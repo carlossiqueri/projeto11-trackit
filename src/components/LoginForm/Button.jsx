@@ -1,5 +1,5 @@
 import { FormButton } from "./style"
-function Button({text}){
+function Button({text, opacity}){
     return (
         <FormButton>{text}</FormButton>
     )

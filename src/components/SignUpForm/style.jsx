@@ -25,7 +25,6 @@ export const FormButton = styled.button`
     width: 310px;
     height: 45px;
     background: #52B6FF;
-    opacity: ${props => !props.opacity ? "" : "0.7"};
     border-radius: 4.63636px;
     border: none;
     font-family: "Lexend Deca";
@@ -34,9 +33,6 @@ export const FormButton = styled.button`
     line-height: 26px;
     text-align: center;
     color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `
 
 export const RedirectLink = styled.a`

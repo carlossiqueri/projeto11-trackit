@@ -20,32 +20,31 @@ export const AddHabits = styled.div`
 export const AddHabitsButton = styled.button`
   /*button*/
   width: 40px;
-  height: 35px;
+  max-height: 35px;
   background-color: #52b6ff;
   border-radius: 4.63636px;
   border: none;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-right: 17px;
+  padding-bottom: 5px;
   /*text*/
 
   font-family: "Lexend Deca";
   font-weight: 400;
-  font-size: 26.976px;
-  line-height: 34px;
-  text-align: center;
+  font-size: 26px;
   color: #ffffff;
 `;
 
 export const Text = styled.p`
   width: 338px;
-  text-align: left;
   font-family: "Lexend Deca";
   font-weight: 400;
   font-size: 17.976px;
   line-height: 22px;
   color: #666666;
+  margin-right: 18px;
 `;
 
 export const AddContainer = styled.div`
@@ -99,6 +98,9 @@ export const ContainerButtons = styled.div`
     font-size: 19px;
     line-height: 25px;
     color: #DBDBDB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -123,6 +125,9 @@ export const ContainerSave = styled.div`
     font-size: 15px;
     line-height: 26px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #FFFFFF;
   }
 

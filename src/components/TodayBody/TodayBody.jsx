@@ -6,7 +6,7 @@ export default function TodayBody(){
         <>
         <AddHabits>
             <h1>Meus hábitos</h1>
-        <AddHabitsButton>{"+"}</AddHabitsButton>
+        <AddHabitsButton>+</AddHabitsButton>
         </AddHabits>
         <AddSection />
         <NoHabbits />
