@@ -2,6 +2,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import HabitsPage from "./pages/HabitsPage/HabitsPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
+import TodayPage from "./pages/TodayPage/TodayPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { UserContext } from "./components/contexts/UserContext";
@@ -28,6 +29,7 @@ function App() {
           />
 
           <Route path={"/historico"} element={<HistoryPage />} />
+          <Route path={"/hoje"} element={<TodayPage />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

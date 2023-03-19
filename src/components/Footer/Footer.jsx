@@ -11,10 +11,12 @@ export default function Footer(){
     function habitsRedirect(){
         navigate("/habitos")
     }
+
+
     return (
         <HabitsFooter>
             <a onClick={habitsRedirect}>Hábitos</a>
-        <Button text={"hoje"}/>
+        <Button text={"hoje"} />
             <a onClick={historyRedirect}>Histórico</a>
         </HabitsFooter>
     )
