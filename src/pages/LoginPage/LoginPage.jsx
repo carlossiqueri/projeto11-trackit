@@ -2,7 +2,7 @@ import logo from "../../images/logo.png";
 import Form from "../../components/LoginForm/Form";
 import { LoginContainer } from "./style";
 
-export default function LoginPage({setToken, setUserIcon}) {
+export default function LoginPage() {
   const login = ["email", "senha"];
   const buttonText = "Entrar";
   const linkText = "Não tem uma conta? Cadastre-se!";
@@ -15,8 +15,7 @@ export default function LoginPage({setToken, setUserIcon}) {
         buttonText={buttonText}
         linkText={linkText}
         path={path}
-        setToken={setToken}
-        setUserIcon={setUserIcon}
+
       />
     </LoginContainer>
   );

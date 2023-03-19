@@ -3,10 +3,10 @@ import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import TodayBody from "../../components/TodayBody/TodayBody"
 
-export default function HabitsPage ({userIcon}){
+export default function HabitsPage (){
     return (
         <>
-        <Header userIcon={userIcon}/>
+        <Header />
         <HabitsBody>
             <TodayBody />
         </HabitsBody>

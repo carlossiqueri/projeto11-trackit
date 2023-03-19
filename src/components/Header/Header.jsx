@@ -1,11 +1,12 @@
 import {HabitsHeader} from "./style";
-
-export default function Header({userIcon}){
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+export default function Header(){
+    const {userIcon} = useContext(UserContext);
     return (
         <HabitsHeader>
         <p>TrackIt</p>
         <img src={userIcon} alt="userIcon"/>
-        {console.log(userIcon)}
         </HabitsHeader>
     )
 }
