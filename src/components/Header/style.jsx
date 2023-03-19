@@ -9,6 +9,7 @@ export const HabitsHeader = styled.header`
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 1;
     img {
         width: 51px;
         border-radius: 98.5px;

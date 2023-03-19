@@ -86,38 +86,41 @@ export const AddHabitInput = styled.input`
 export const ContainerButtons = styled.div`
   display: flex;
 
-  button {
-    background-color: #ffffff;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #d5d5d5;
-    border-radius: 5px;
-    margin-right: 4px;
-    font-family: "Lexend Deca";
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 25px;
-    color: #DBDBDB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  /* button {
+
+  } */
 `;
 
+export const WeekButtons = styled.button`
+  background-color: ${(props) => props.background};
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  margin-right: 4px;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
+  color: ${(props) => props.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const ContainerSave = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 180px;
-    height: 50px;
-    position: relative;
-    top: 20px;
-    left: 144px;
-    button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 180px;
+  height: 50px;
+  position: relative;
+  top: 20px;
+  left: 144px;
+  button {
     width: 84px;
     height: 35px;
-    background: #52B6FF;
+    background: #52b6ff;
     border-radius: 4.63636px;
     border: none;
     font-family: "Lexend Deca";
@@ -128,7 +131,51 @@ export const ContainerSave = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: #ffffff;
   }
+`;
 
+export const HabitsContainer = styled.div`
+  width: 90%;
+  height: 94px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  h2 {
+    font-family: "Lexend Deca";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.976px;
+    line-height: 25px;
+    color: #666666;
+    margin-top: 13px;
+    margin-left: 15px;
+    margin-bottom: 7px;
+  }
+`;
+
+export const ContainerHabitsWeekButton =styled.div`
+  display: flex;
+  margin-left: 14px;
+`
+
+export const HabitsWeekButton = styled.button`
+  background-color: ${props => props.background};
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  margin-right: 4px;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
+  color:${props => props.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

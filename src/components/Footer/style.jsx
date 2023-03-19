@@ -4,10 +4,11 @@ export const HabitsFooter = styled.footer`
   bottom: 0;
   width: 100%;
   background-color: #ffffff;
-  height: 70px;
+  max-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 1;
 
   a {
     font-family: "Lexend Deca";

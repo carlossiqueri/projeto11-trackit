@@ -18,7 +18,7 @@ export default function Form({ buttonText, linkText, path }) {
     setText(<Loader />)
     setDisable(true);
     const body = { email, password, name, image };
-    axios.post(`${SIGNUP_URL}`, body)
+    axios.post(SIGNUP_URL, body)
         .then(res => navigate(path))
         .catch(err => {
           alert(err.response.data.message)
