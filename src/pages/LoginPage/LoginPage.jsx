@@ -15,10 +15,7 @@ export default function LoginPage() {
         buttonText={buttonText}
         linkText={linkText}
         path={path}
-
       />
     </LoginContainer>
-
-
   );
 }

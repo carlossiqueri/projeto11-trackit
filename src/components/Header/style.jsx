@@ -12,6 +12,7 @@ export const HabitsHeader = styled.header`
     z-index: 1;
     img {
         width: 51px;
+        height: 51px;
         border-radius: 98.5px;
         margin-right: 18px;
     }
