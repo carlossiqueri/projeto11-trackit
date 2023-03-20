@@ -179,4 +179,3 @@ export const HabitsWeekButton = styled.button`
   justify-content: center;
   align-items: center;
 `;
-

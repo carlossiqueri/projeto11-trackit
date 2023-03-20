@@ -72,7 +72,11 @@ export default function Form({ buttonText, linkText, path }) {
           disabled={disable ? "disabled" : ""}
           required
         />
-        <Button data-test="signup-btn" text={text} />
+        <Button 
+        data-test="signup-btn" 
+        text={text} 
+        disabled={disable ? "disabled" : ""}
+        />
       </FormularyField>
 
       <RedirectLink data-test="login-link" onClick={changePanels}>

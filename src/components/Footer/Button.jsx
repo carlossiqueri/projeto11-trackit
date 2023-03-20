@@ -14,7 +14,6 @@ export default function Button({ text }) {
   } else {
     progressBar = (doneHabit.length / todayHabits.length) * 100;
   }
-  console.log(progressBar);
   function todayRedirect() {
     navigate("/hoje");
   }

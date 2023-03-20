@@ -35,7 +35,7 @@ export default function TasksBody() {
       axios
         .post(UNCHECK_URL, {}, config)
         .then((res) => {
-          const newChecked = doneHabit.filter((f) => f == i);
+          const newChecked = doneHabit.filter((f) => f !== i);
           setDoneHabit(newChecked);
           axios
             .get(TODAY_URL, config)
@@ -65,9 +65,10 @@ export default function TasksBody() {
   return (
     <>
       {todayHabits.map((h) => (
-        <TasksContainer key={h.id}>
-          <h2>{h.name}</h2>
+        <TasksContainer data-test="today-habit-container" key={h.id}>
+          <h2 data-test="today-habit-name">{h.name}</h2>
           <Sequence
+            data-test="today-habit-sequence"
             color={
               h.currentSequence >= h.highestSequence && h.currentSequence > 0
                 ? "#8FC549"
@@ -76,8 +77,11 @@ export default function TasksBody() {
           >
             Sequência Atual: {h.currentSequence} dias
           </Sequence>
-          <Record>Seu recorde: {h.highestSequence} dias</Record>
+          <Record data-test="today-habit-record">
+            Seu recorde: {h.highestSequence} dias
+          </Record>
           <CheckButton
+            data-test="today-habit-check-btn"
             color={h.done ? "#8FC549" : "#ebebeb"}
             onClick={() => checkHabit(h.id, h.done, h)}
           >

@@ -26,21 +26,21 @@ function App() {
     setDoneHabit,
   };
 
-  const progress = {progressCounter, setProgressCounter}
+  const progress = { progressCounter, setProgressCounter };
 
   return (
     <BrowserRouter>
       <UserContext.Provider value={user}>
         <HabitsContext.Provider value={userHabits}>
           <ProgressContext.Provider value={progress}>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/cadastro" element={<SignUpPage />} />
-            <Route path="/habitos" element={<HabitsPage />} />
+            <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/cadastro" element={<SignUpPage />} />
+              <Route path="/habitos" element={<HabitsPage />} />
 
-            <Route path={"/historico"} element={<HistoryPage />} />
-            <Route path={"/hoje"} element={<TodayPage />} />
-          </Routes>
+              <Route path={"/historico"} element={<HistoryPage />} />
+              <Route path={"/hoje"} element={<TodayPage />} />
+            </Routes>
           </ProgressContext.Provider>
         </HabitsContext.Provider>
       </UserContext.Provider>

@@ -47,10 +47,13 @@ export default function TodayPage() {
     <>
       <Header />
       <TasksBodyContainer>
-        <h1>
+        <h1 data-test="today">
           {weekDay}, {date + "/" + monthConverted}
         </h1>
-        <HabitsText color={amountDone === 0 ? "#BABABA" : "#8FC549"}>
+        <HabitsText
+          data-test="today-counter"
+          color={amountDone === 0 ? "#BABABA" : "#8FC549"}
+        >
           {progressCounter}
         </HabitsText>
         <TasksBody />
