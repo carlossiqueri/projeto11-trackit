@@ -8,14 +8,13 @@ import axios from "axios";
 import Loader from "../Loader/Loader";
 import { UserContext } from "../contexts/UserContext";
 
-export default function Form({ buttonText, linkText, path }) {
+export default function Form({ buttonText, linkText, path, teste }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [text, setText] = useState(buttonText);
   const [disable, setDisable] = useState(false);
   const [opacity, setOpacity] = useState(false);
   const { setToken, setUserIcon } = useContext(UserContext);
-
   const navigate = useNavigate();
   function changePanels() {
     navigate(path);
@@ -62,7 +61,7 @@ export default function Form({ buttonText, linkText, path }) {
           disabled={disable ? "disabled" : ""}
           required
         />
-        <Button data-test="login-btn" text={text} opacity={opacity} />
+        <Button text={text} opacity={opacity} />
       </FormularyField>
 
       <RedirectLink data-test="signup-link" onClick={changePanels}>

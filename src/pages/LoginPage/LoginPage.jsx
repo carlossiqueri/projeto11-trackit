@@ -7,6 +7,7 @@ export default function LoginPage() {
   const buttonText = "Entrar";
   const linkText = "Não tem uma conta? Cadastre-se!";
   const path = "/cadastro";
+  const teste = "login-btn";
   return (
     <LoginContainer>
       <img src={logo} alt="logo" />
@@ -15,6 +16,7 @@ export default function LoginPage() {
         buttonText={buttonText}
         linkText={linkText}
         path={path}
+        teste={teste}
       />
     </LoginContainer>
   );

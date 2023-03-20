@@ -1,5 +1,5 @@
 import { FormularyField } from "./style";
-import Button from "../LoginForm/Button";
+import Button from "../SignUpForm/Button";
 import { RedirectLink } from "./style";
 import { useNavigate } from "react-router-dom";
 import { SIGNUP_URL } from "../../constants/urls";

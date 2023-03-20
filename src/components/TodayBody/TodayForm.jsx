@@ -72,6 +72,7 @@ export default function TodayForm({ setAdd, saveButton }) {
   return (
     <>
       <AddHabitInput
+        data-test="habit-name-input"
         disabled={disable ? "disabled" : ""}
         id="habit"
         placeholder="nome do hábito"
@@ -82,6 +83,7 @@ export default function TodayForm({ setAdd, saveButton }) {
       <ContainerButtons>
         {week.map((w, index) => (
           <WeekButtons
+            data-test="habit-day"
             disabled={disable ? "disabled" : ""}
             color={days.includes(index) ? "#FFFFFF" : "#CFCFCF"}
             background={!days.includes(index) ? "#FFFFFF" : "#CFCFCF"}
@@ -94,8 +96,12 @@ export default function TodayForm({ setAdd, saveButton }) {
       </ContainerButtons>
 
       <ContainerSave>
-        <span onClick={toggleAddOff}>Cancelar</span>
-        <button onClick={submit}>{text}</button>
+        <span data-test="habit-create-cancel" onClick={toggleAddOff}>
+          Cancelar
+        </span>
+        <button data-test="habit-create-save-btn" onClick={submit}>
+          {text}
+        </button>
       </ContainerSave>
     </>
   );
