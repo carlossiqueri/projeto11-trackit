@@ -11,21 +11,21 @@ export default function Form({ buttonText, linkText, path }) {
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
   const [email, setEmail] = useState("");
-  const [text, setText] = useState(buttonText)
-  const [disable, setDisable] = useState(false)
+  const [text, setText] = useState(buttonText);
+  const [disable, setDisable] = useState(false);
   function singUp(e) {
     e.preventDefault();
-    setText(<Loader />)
+    setText(<Loader />);
     setDisable(true);
     const body = { email, password, name, image };
-    axios.post(SIGNUP_URL, body)
-        .then(res => navigate(path))
-        .catch(err => {
-          alert(err.response.data.message)
-          setText(buttonText)
-          setDisable(false)
-        })
-    
+    axios
+      .post(SIGNUP_URL, body)
+      .then((res) => navigate(path))
+      .catch((err) => {
+        alert(err.response.data.message);
+        setText(buttonText);
+        setDisable(false);
+      });
   }
 
   const navigate = useNavigate();
@@ -37,6 +37,7 @@ export default function Form({ buttonText, linkText, path }) {
     <>
       <FormularyField onSubmit={singUp}>
         <input
+          data-test="email-input"
           type="text"
           placeholder="email"
           value={email}
@@ -45,6 +46,7 @@ export default function Form({ buttonText, linkText, path }) {
           required
         />
         <input
+          data-test="password-input"
           type="password"
           placeholder="senha"
           value={password}
@@ -53,6 +55,7 @@ export default function Form({ buttonText, linkText, path }) {
           required
         />
         <input
+          data-test="user-name-input"
           type="text"
           placeholder="nome"
           value={name}
@@ -61,6 +64,7 @@ export default function Form({ buttonText, linkText, path }) {
           required
         />
         <input
+          data-test="user-image-input"
           type="text"
           placeholder="foto"
           value={image}
@@ -68,10 +72,12 @@ export default function Form({ buttonText, linkText, path }) {
           disabled={disable ? "disabled" : ""}
           required
         />
-        <Button text={text} />
+        <Button data-test="signup-btn" text={text} />
       </FormularyField>
 
-      <RedirectLink onClick={changePanels}>{linkText}</RedirectLink>
+      <RedirectLink data-test="login-link" onClick={changePanels}>
+        {linkText}
+      </RedirectLink>
     </>
   );
 }

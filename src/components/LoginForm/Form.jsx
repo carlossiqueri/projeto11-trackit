@@ -14,7 +14,7 @@ export default function Form({ buttonText, linkText, path }) {
   const [text, setText] = useState(buttonText);
   const [disable, setDisable] = useState(false);
   const [opacity, setOpacity] = useState(false);
-  const {setToken, setUserIcon} = useContext(UserContext);
+  const { setToken, setUserIcon } = useContext(UserContext);
 
   const navigate = useNavigate();
   function changePanels() {
@@ -45,6 +45,7 @@ export default function Form({ buttonText, linkText, path }) {
     <>
       <FormularyField onSubmit={login}>
         <input
+          data-test="email-input"
           type="text"
           placeholder="email"
           value={email}
@@ -53,6 +54,7 @@ export default function Form({ buttonText, linkText, path }) {
           required
         />
         <input
+          data-test="password-input"
           type="password"
           placeholder="senha"
           value={password}
@@ -60,10 +62,12 @@ export default function Form({ buttonText, linkText, path }) {
           disabled={disable ? "disabled" : ""}
           required
         />
-        <Button text={text} opacity={opacity} />
+        <Button data-test="login-btn" text={text} opacity={opacity} />
       </FormularyField>
 
-      <RedirectLink onClick={changePanels}>{linkText}</RedirectLink>
+      <RedirectLink data-test="signup-link" onClick={changePanels}>
+        {linkText}
+      </RedirectLink>
     </>
   );
 }
