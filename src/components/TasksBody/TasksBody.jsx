@@ -1,18 +1,90 @@
-import { TasksContainer, CheckButton } from "./style";
-import button from "../../images/button.png"
+import { TasksContainer, CheckButton, Sequence, Record } from "./style";
+import button from "../../images/button.png";
+import { HabitsContext } from "../contexts/HabitsContext";
+import { UserContext } from "../contexts/UserContext";
+import { useContext, useEffect, useState } from "react";
+import { TODAY_URL } from "../../constants/urls";
+import axios from "axios";
+export default function TasksBody() {
+  const { todayHabits, setTodayHabits, doneHabit, setDoneHabit } =
+    useContext(HabitsContext);
+  const { token } = useContext(UserContext);
 
-export default function TasksBody(){
-return (
+  function checkHabit(i, done) {
+    const CHECK_URL = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${i}/check`;
+    const UNCHECK_URL = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${i}/uncheck`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    if (!done) {
+      axios
+        .post(CHECK_URL, {}, config)
+        .then((res) => {
+          setDoneHabit([...doneHabit, i]);
+          axios
+            .get(TODAY_URL, config)
+            .then((res) => {
+              setTodayHabits(res.data);
+            })
+            .catch((err) => console.log(err.response.data.message));
+        })
+        .catch((err) => console.log(err.response.data.message));
+    } else {
+      axios
+        .post(UNCHECK_URL, {}, config)
+        .then((res) => {
+          const newChecked = doneHabit.filter((f) => f == i);
+          setDoneHabit(newChecked);
+          axios
+            .get(TODAY_URL, config)
+            .then((res) => {
+              setTodayHabits(res.data);
+            })
+            .catch((err) => console.log(err.response.data.message));
+        })
+        .catch((err) => console.log(err.response.data.message));
+    }
+  }
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    axios
+      .get(TODAY_URL, config)
+      .then((res) => {
+        setTodayHabits(res.data);
+      })
+      .catch((err) => alert(err.response.data.message));
+  }, []);
+
+  return (
     <>
-    <TasksContainer>
-        <h2>Ler 1 capítulo de livro</h2>
-        <span>Sequência Atual: 3 dias</span>
-        <span>Seu recorde: 5 dias</span>
-        <CheckButton><img src={button} alt="checkmark do botão"/> </CheckButton>
-    </TasksContainer>
-
-
+      {todayHabits.map((h) => (
+        <TasksContainer key={h.id}>
+          <h2>{h.name}</h2>
+          <Sequence
+            color={
+              h.currentSequence >= h.highestSequence && h.currentSequence > 0
+                ? "#8FC549"
+                : "#666666"
+            }
+          >
+            Sequência Atual: {h.currentSequence} dias
+          </Sequence>
+          <Record>Seu recorde: {h.highestSequence} dias</Record>
+          <CheckButton
+            color={h.done ? "#8FC549" : "#ebebeb"}
+            onClick={() => checkHabit(h.id, h.done, h)}
+          >
+            <img src={button} alt="checkmark do botão" />{" "}
+          </CheckButton>
+        </TasksContainer>
+      ))}
     </>
-)
+  );
 }
-

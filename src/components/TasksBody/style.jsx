@@ -22,15 +22,6 @@ export const TasksContainer = styled.div`
     margin-bottom: 7px;
   }
 
-  span {
-    font-family: "Lexend Deca";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.976px;
-    line-height: 16px;
-    color: #666666;
-    margin-left: 15px;
-  }
 `;
 
 export const CheckButton = styled.button`
@@ -39,10 +30,30 @@ export const CheckButton = styled.button`
   position: absolute;
   top: 13px;
   right: 13px;
-  background: #ebebeb;
+  background: ${props => props.color};
   border: 1px solid #e7e7e7;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
+export const Sequence = styled.span`
+      font-family: "Lexend Deca";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.976px;
+    line-height: 16px;
+    color: ${props => props.color};
+    margin-left: 15px;
+`
+
+export const Record = styled.span`
+      font-family: "Lexend Deca";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.976px;
+    line-height: 16px;
+    color: #666666;
+    margin-left: 15px;
+`

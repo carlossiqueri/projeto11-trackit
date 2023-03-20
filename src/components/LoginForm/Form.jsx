@@ -32,7 +32,7 @@ export default function Form({ buttonText, linkText, path }) {
       .then((res) => {
         setToken(res.data.token);
         setUserIcon(res.data.image);
-        navigate("/habitos");
+        navigate("/hoje");
       })
       .catch((err) => {
         console.log(err);

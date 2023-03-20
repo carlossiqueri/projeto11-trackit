@@ -158,13 +158,13 @@ export const HabitsContainer = styled.div`
   }
 `;
 
-export const ContainerHabitsWeekButton =styled.div`
+export const ContainerHabitsWeekButton = styled.div`
   display: flex;
   margin-left: 14px;
-`
+`;
 
 export const HabitsWeekButton = styled.button`
-  background-color: ${props => props.background};
+  background-color: ${(props) => props.background};
   width: 30px;
   height: 30px;
   border: 1px solid #d5d5d5;
@@ -174,8 +174,9 @@ export const HabitsWeekButton = styled.button`
   font-weight: 400;
   font-size: 19px;
   line-height: 25px;
-  color:${props => props.color};
+  color: ${(props) => props.color};
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
+

@@ -5,17 +5,21 @@ import {
   WeekButtons,
 } from "./style";
 import { UserContext } from "../contexts/UserContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { HABITS_URL } from "../../constants/urls";
 import { HabitsContext } from "../contexts/HabitsContext";
+import Loader from "../Loader/Loader";
+// import HabitsButton from "./HabitsButton";
 
-export default function TodayForm({ setAdd }) {
+export default function TodayForm({ setAdd, saveButton }) {
   const week = ["D", "S", "T", "Q", "Q", "S", "S"];
-  const {habits, setHabits} = useContext(HabitsContext)
+  const { habits, setHabits } = useContext(HabitsContext);
+  const { token } = useContext(UserContext);
   const [days, setDays] = useState([]);
   const [name, setName] = useState("");
-  const { token } = useContext(UserContext);
+  const [text, setText] = useState(saveButton);
+  const [disable, setDisable] = useState(false);
   function toggleAddOff() {
     setAdd(false);
   }
@@ -31,39 +35,44 @@ export default function TodayForm({ setAdd }) {
 
   function submit(e) {
     e.preventDefault();
+    setText(<Loader />);
+    setDisable(true);
     const body = { name, days };
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
+    };
     axios
       .post(HABITS_URL, body, config)
       .then((res) => {
-        setName("")
-        setDays([])
+        setText(saveButton);
+        setDisable(false);
+        setName("");
+        setDays([]);
         {
           const config = {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-  
-          axios.get(HABITS_URL, config)
-            .then(res => {
-              console.log(res.data)
-              setHabits(res.data)
-          })
-            .catch(err => console.log(err.response.data))
-  
-    }
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          };
+
+          axios
+            .get(HABITS_URL, config)
+            .then((res) => {
+              console.log(res.data);
+              setHabits(res.data);
+            })
+            .catch((err) => console.log(err.response.data));
+        }
       })
-      .catch((err) => alert(err.response.data.message))
+      .catch((err) => alert(err.response.data.message));
   }
 
   return (
     <>
       <AddHabitInput
+        disabled={disable ? "disabled" : ""}
         id="habit"
         placeholder="nome do hábito"
         value={name}
@@ -73,6 +82,7 @@ export default function TodayForm({ setAdd }) {
       <ContainerButtons>
         {week.map((w, index) => (
           <WeekButtons
+            disabled={disable ? "disabled" : ""}
             color={days.includes(index) ? "#FFFFFF" : "#CFCFCF"}
             background={!days.includes(index) ? "#FFFFFF" : "#CFCFCF"}
             onClick={() => saveDay(index)}
@@ -85,7 +95,7 @@ export default function TodayForm({ setAdd }) {
 
       <ContainerSave>
         <span onClick={toggleAddOff}>Cancelar</span>
-        <button onClick={submit}>Salvar</button>
+        <button onClick={submit}>{text}</button>
       </ContainerSave>
     </>
   );

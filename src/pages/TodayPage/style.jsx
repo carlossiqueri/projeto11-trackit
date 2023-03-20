@@ -17,15 +17,17 @@ export const TasksBodyContainer = styled.div`
     margin-top: 28px;
   }
 
-  p {
-    width: 338px;
+`;
+
+export const HabitsText = styled.p`
+      width: 338px;
     font-family: "Lexend Deca";
     font-weight: 400;
     font-size: 17.976px;
     line-height: 22px;
-    color: #BABABA;
+    color: ${props => props.color};
     margin-right: 18px;
     margin-left: 17px;
     margin-bottom: 28px;
-  }
-`;
+`
+
