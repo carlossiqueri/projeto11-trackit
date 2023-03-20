@@ -63,7 +63,7 @@ export default function TodayForm({ setAdd, saveButton }) {
               console.log(res.data);
               setHabits(res.data);
             })
-            .catch((err) => console.log(err.response.data));
+            .catch((err) => alert(err.response.data));
         }
       })
       .catch((err) => alert(err.response.data.message));

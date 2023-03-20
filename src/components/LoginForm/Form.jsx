@@ -34,7 +34,7 @@ export default function Form({ buttonText, linkText, path, teste }) {
         navigate("/hoje");
       })
       .catch((err) => {
-        console.log(err);
+        alert(err.response.data.message);
         setText(buttonText);
         setDisable(false);
       });

@@ -33,6 +33,9 @@ export const FormButton = styled.button`
   line-height: 26px;
   text-align: center;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const RedirectLink = styled.a`

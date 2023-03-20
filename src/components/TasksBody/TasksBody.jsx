@@ -28,9 +28,9 @@ export default function TasksBody() {
             .then((res) => {
               setTodayHabits(res.data);
             })
-            .catch((err) => console.log(err.response.data.message));
+            .catch((err) => alert(err.response.data.message));
         })
-        .catch((err) => console.log(err.response.data.message));
+        .catch((err) => alert(err.response.data.message));
     } else {
       axios
         .post(UNCHECK_URL, {}, config)
@@ -42,9 +42,9 @@ export default function TasksBody() {
             .then((res) => {
               setTodayHabits(res.data);
             })
-            .catch((err) => console.log(err.response.data.message));
+            .catch((err) => alert(err.response.data.message));
         })
-        .catch((err) => console.log(err.response.data.message));
+        .catch((err) => alert(err.response.data.message));
     }
   }
 

@@ -37,9 +37,9 @@ export default function HabitsSection() {
               console.log(res.data);
               setHabits(res.data);
             })
-            .catch((err) => console.log(err.response.data));
+            .catch((err) => alert(err.response.data));
         })
-        .catch((err) => console.log(err.response.data));
+        .catch((err) => alert(err.response.data));
     } else {
       console.log("ok");
     }
