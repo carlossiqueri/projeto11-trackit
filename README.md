@@ -3,9 +3,7 @@
 O Trackit é uma aplicação completa de acompanhamento de hábitos, projetada para ajudar os usuários a gerenciar e monitorar seus hábitos diários. Com recursos de cadastro, login e uma variedade de bibliotecas integradas, o Trackit oferece uma experiência abrangente para melhorar a produtividade e o bem-estar.
 <div style = "display: flex; flex-direction: row;">
   <img src= "https://github.com/carlossiqueri/projeto11-trackit/assets/110114531/b475b06c-4ce0-458f-b702-3bec2a69db3b" height= "500" width= "300"/>
-    <img src= "https://github.com/carlossiqueri/projeto11-trackit/assets/110114531/44bdb42e-a42d-4967-b702-eef7f3a128d3" height= "500" width= "300"/>
-
-
+  <img src= "https://github.com/carlossiqueri/projeto11-trackit/assets/110114531/44bdb42e-a42d-4967-b702-eef7f3a128d3" height= "500" width= "300"/>
 </div>
 
 
