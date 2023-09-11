@@ -29,6 +29,12 @@ O Trackit é uma aplicação completa de acompanhamento de hábitos, projetada p
 
 Antes de instalar o Trackit, certifique-se de ter o Node.js e o npm (Node Package Manager) instalados em seu sistema. Você pode baixá-los em [nodejs.org](https://nodejs.org/).
 
+## Tecnologias Utilizadas
+
+- React
+- Axios
+- Styled Components
+
 ## Instalação
 
 Para instalar o Trackit, siga os passos abaixo:
